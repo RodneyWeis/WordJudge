@@ -1,7 +1,7 @@
 # judge.py
 
 # Choose the source file
-path = "lexicon/owl16.txt"
+path = "lexicon/wordlist.txt"
 
 # Open the source file
 text_file = open(path, "r")
