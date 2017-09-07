@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # judge.py
+
+import sys
 
 # Choose the source file
 path = "lexicon/wordlist.txt"
@@ -9,27 +12,24 @@ text_file = open(path, "r")
 # Assign the contents of the source file to words
 words = text_file.readlines()
 
-# Calculate the length of the source file
-words_length = (len(words))
+# Parse candidate words from the command line arguments
+candidates = sys.argv[1:]
 
-print ("There are " + str(words_length) + " words.")
-
-
-candidate = "RODNEYS\n"
-print("The candidate is " + candidate)
+print("Words to be checked: " + str(candidates))
 
 valid = True
 
-
-# TODO:  make this a function
-# TODO:  iterate over one or multiple words
-if (valid == True):
+# iterate over all of the candidate words
+for candidate in candidates:
+    word = candidate.upper()
+    word = word + "\n"
+#   print("Trying word: " + word)
     try:
-        test = (words.index(candidate))
+        test = (words.index(word))
+#       print(test)
     except ValueError:
         valid = False
-    else:
-        valid = True
+
 if (valid):
     print("The play is acceptable")
 else:
