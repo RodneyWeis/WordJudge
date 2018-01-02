@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # judge.py
 
+# TODO Prepare for GUI interface 20180101
+
 import sys
 
 # Choose the source file
@@ -34,11 +36,6 @@ if (valid):
     print("The play is acceptable")
 else:
     print("The play is NOT acceptable")
-
-
-
-
-
 
 # Close the source file
 text_file.close()
